@@ -26,3 +26,6 @@ curl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh | bas
 
 para abrir filebrowser (en otra terminal de wsl)
 filebrowser -r ytc/webpage/static/content
+
+filebrowser
+http://127.0.0.1:8080/
