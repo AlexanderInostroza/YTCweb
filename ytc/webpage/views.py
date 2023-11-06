@@ -9,5 +9,5 @@ def home(request):
 
     return render(request, "home.html")
 
-def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+def pets(request):
+    return render(request, "pets.html")
