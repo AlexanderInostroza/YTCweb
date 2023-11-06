@@ -5,6 +5,9 @@
 }
 
 .header{
+    position: fixed;
+    top: 0;
+    width: 100%;
     background-color: #d2a6ff;
     display: flex;
     justify-content: space-between;
@@ -24,7 +27,7 @@
     transform: scale(1.2);
 }
 
-.header .nav-link{
+.header .nav-link-ytc{
     color: #694c6f;
     list-style: none;
     display: flex;
@@ -35,19 +38,19 @@
     margin-right: 16px;
 }
 
-.header .nav-link li{
+.header .nav-link-ytc li{
     display: inline-block;
     padding: 0px 20;
 }
-.header .nav-link li:hover{
+.header .nav-link-ytc li:hover{
     transform: scale(1.1);
 }
 
-.header .nav-link a{
+.header .nav-link-ytc a{
     font-size: 700;
     color: white;
     text-decoration: none;
 }
-.header .nav-link li a:hover{
-    color: #694c6f;
+.header .nav-link-ytc li a:hover{
+    color: #ffffff;
 }

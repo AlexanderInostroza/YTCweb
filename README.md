@@ -19,7 +19,7 @@ cd ytc
 python3 manage.py runserver
 
 URL
-http://127.0.0.1:8000/webpage/
+http://127.0.0.1:8000/
 
 instalar filebrowser
 curl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh | bash
