@@ -11,3 +11,7 @@ def home(request):
 
 def pets(request):
     return render(request, "pets.html")
+
+
+def donate(request):
+    return render(request, "donate.html")
