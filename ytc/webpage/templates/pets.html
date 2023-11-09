@@ -55,57 +55,18 @@
     }
 </style>
 <div class="title-container">
-    <h1>Animales en Adopción</h1>
-</div>
-
-<div class="card-container">
-    <div class="card">
-    <img src="/static/resources/descarga.jpg" alt="Perro 1">
-    <h3>Nombre del Perro 1</h3>
-    <p>Descripción del Perro 1. Puede ser una descripción breve sobre el perro.</p>
-    </div>
-
-    <div class="card">
-    <img src="/static/resources/descarga2.jpg" alt="Perro 2">
-    <h3>Nombre del Perro 2</h3>
-    <p>Descripción del Perro 2. Puede ser una descripción breve sobre el perro.</p>
-    </div>
-
-    <div class="card">
-    <img src="/static/resources/descarga3.jpg" alt="Perro 2">
-    <h3>Nombre del Perro 2</h3>
-    <p>Descripción del Perro 2. Puede ser una descripción breve sobre el perro.</p>
-    </div>
-
-    <div class="card">
-    <img src="/static/resources/brian.png" alt="Perro Vurayatan">
-    <h3>Perro Vurayatan</h3>
-    <p>Descripción del Perro 2. Puede ser una descripción breve sobre el perro.</p>
-    </div>
-
-    <div class="card">
-    <img src="/static/resources/nico.png" alt="Perro nicolasu">
-    <h3>Perro nicolasu</h3>
-    <p>Descripción del Perro 2. Puede ser una descripción breve sobre el perro.</p>
-    </div>
-
-    <div class="card">
-    <img src="/static/resources/PerroAlex.png" alt="Perro 2">
-    <h3>Nombre del Perro 2</h3>
-    <p>Descripción del Perro 2. Puede ser una descripción breve sobre el perro.</p>
-    </div>
-
-    <div class="card">
-    <img src="/static/resources/descarga2.jpg" alt="Perro 2">
-    <h3>Nombre del Perro 2</h3>
-    <p>Descripción del Perro 2. Puede ser una descripción breve sobre el perro.</p>
-    </div>
-
-    <div class="card">
-      <img src="/static/resources/perromati.jpg" alt="Perro 2">
-      <h3>Perro matias</h3>
-      <p>Descripción del Perro 2. Puede ser una descripción breve sobre el perro.</p>
+   <h1>Animales en Adopción</h1>
    </div>
+   
+   <div class="card-container">
+      {% for pet in pets %}
+      <div class="card">
+         <img src="/static/content/adopcion/{{pet.img}}" alt="{{ pet.name }}">
+         <h3>{{ pet.name }}</h3>
+         <p>Descripción del Perro 1. Puede ser una descripción breve sobre el perro.</p>
+         </div>
+      {% endfor %}
+    
 </div>
 
 {% endblock content %}
