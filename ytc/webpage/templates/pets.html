@@ -1,11 +1,9 @@
     {% extends "base.html" %}
 
-
 {% block content %}
 
 
 <style>
-   /* Estilos para la presentación */
    .card {
        border: 1px solid #5d318a;
        border-radius: 8px;
@@ -28,7 +26,7 @@
        color: black;
    }
    .card p {
-        color: #333; /* Cambio del color del texto a negro (#333) */
+        color: #333;
     }
    .card:hover { 
     transform: scale(1.05);
@@ -42,22 +40,13 @@
         display: flex;
         justify-content: center;
         margin-top: 5px; 
-    }
-   h1 {
-        text-align: center;
-        background-color: #fed751;
-        color: white;
-        padding: 1em;
-        border-radius: 10px;
-        font-size: 2.5em;
-        display: inline-block;
-        max-width: max-content;
+        height: 135px;
     }
 </style>
-<div class="title-container">
-   <h1>Animales en Adopción</h1>
-   </div>
-   
+<div class="section-title">
+   <h1>ADÓPTAME</h1>
+</div>
+
    <div class="card-container">
       {% for pet in pets %}
       <div class="card">

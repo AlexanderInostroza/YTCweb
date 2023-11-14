@@ -15,8 +15,7 @@ instalar django
 python3 -m pip install Django
 
 correr server
-cd ytc
-python3 manage.py runserver
+python3 ytc/manage.py runserver
 
 URL
 http://127.0.0.1:8000/

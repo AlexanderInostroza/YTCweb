@@ -1,0 +1,265 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 style="padding: 37px"></h2>
+
+<style>
+
+@media (prefers-reduced-motion: no-preference){ 
+  :root { 
+    scroll-behavior: smooth;
+  } 
+}     
+
+.member-p-3 { 
+    padding: 1rem!important;
+} 
+
+.team-wrap { 
+    position: relative; 
+    border-radius: 15px;
+} 
+
+.slick-slide { 
+    display: none; 
+    float: left; 
+    height: 100%; 
+    min-height: 1px;
+} 
+
+.slick-slide  { 
+    display: block;
+} 
+
+.team-wrap:before { 
+    content: "\f14a"; 
+    position: absolute; 
+    font-family: "flaticon"; 
+    font-size: 50px; 
+    left: 0px; 
+    transform: rotate(20deg); 
+    opacity: 0.3; 
+    z-index: 10; 
+    margin-top: -10px;
+} 
+
+.text-center { 
+    text-align: center!important;
+} 
+
+.member  { 
+    border-radius: 15px; 
+    background-clip: padding-box; 
+    position: relative; 
+    overflow: hidden; 
+    border-bottom: 10px solid;
+} 
+
+.member  { 
+    border-color: #108896;
+    background-color: #F5F3EE;
+} 
+
+.member .wrap  { 
+    position: relative; 
+    transition: all .3s ease;
+} 
+
+ .team-wrap .member { 
+    border-radius: 15px; 
+    background-clip: padding-box; 
+    position: relative; 
+    overflow: hidden; 
+    border-bottom: 10px solid;
+} 
+
+.member .more  { 
+    position: absolute; 
+    bottom: -100%; 
+    width: 100%; 
+    padding: 10px; 
+    transition: all .3s ease;
+} 
+
+.team-wrap .member:hover .more { 
+    bottom: 0;
+} 
+
+.member .wrap .info  { 
+    padding: 20px 0; 
+    top: 0%; 
+    width: 100%;
+} 
+
+.team-wrap .member:hover .info { 
+    top: 0;
+} 
+
+
+.img-fluid { 
+    max-width: 100%; 
+    height: auto;
+} 
+
+.rounded-circle { 
+    border-radius: 50%!important;
+    border-color: #F5F3EE;
+} 
+
+
+.member .wrap img  { 
+    width: 100%; 
+    transition: all .3s ease; 
+    padding: 20px;
+} 
+
+.team-wrap .member:hover img { 
+    opacity: 0;
+} 
+
+member-p { 
+    margin-top: 0; 
+    margin-bottom: 1rem;
+    font-size: 17px; 
+    line-height: 34px; 
+    color: #757373;
+} 
+
+.social-media { 
+    width: 100%; 
+    text-align: center; 
+    margin-top: 20px; 
+    margin-bottom: 20px;
+} 
+
+.smaller.social-media { 
+    margin-top: 10px; 
+    margin-bottom: 10px;
+} 
+
+member-h3 { 
+    margin-top: 0; 
+    margin-bottom: .5rem; 
+    font-weight: 500; 
+    line-height: 1.2; 
+    color: var(--bs-heading-color,inherit);
+} 
+
+member-h3 { 
+    font-size: calc(1.3rem + .6vw);
+} 
+
+@media (min-width: 1200px){ 
+  member-h3 { 
+    font-size: 1.75rem;
+  } 
+}     
+
+member-h3 { 
+    font-family: 'Baloo Thambi', sans-serif; 
+    font-size: 2.8em; 
+    color: #282828; 
+    line-height: 1em; 
+    letter-spacing: -0.2px; 
+    margin-bottom: 20px; 
+    margin-top: 0px; 
+    position: relative;
+} 
+
+.member .wrap .info .name  { 
+    margin: 0 0 8px 0; 
+    font-size: 1.7em;
+} 
+
+member-h4 { 
+    margin-top: 0; 
+    margin-bottom: .5rem; 
+    font-weight: 500; 
+    line-height: 1.2; 
+    color: var(--bs-heading-color,inherit);
+} 
+
+member-h4 { 
+    font-size: calc(1.275rem + .3vw);
+} 
+
+@media (min-width: 1200px){ 
+  member-h4 { 
+    font-size: 1.5rem;
+  } 
+}     
+
+member-h4 { 
+    font-family: 'Baloo Thambi', sans-serif; 
+    font-size: 2.3em; 
+    margin-top: 20px; 
+    margin-bottom: 20px; 
+    color: #292929;
+} 
+
+.member .wrap .info .position  { 
+    margin: 0; 
+    font-size: 18px;
+} 
+
+.fab { 
+    -moz-osx-font-smoothing: grayscale; 
+    -webkit-font-smoothing: antialiased; 
+    display: inline-block; 
+    font-style: normal; 
+    font-variant: normal; 
+    text-rendering: auto; 
+    line-height: 1;
+} 
+
+.fab { 
+    font-family: 'Font Awesome 5 Brands';
+} 
+
+.social-media i  { 
+    transition: all .3s ease-in-out;
+} 
+
+.social-media a i  { 
+    font-weight: normal; 
+    color: #fff; 
+    transition: all .3s ease-in-out; 
+    margin: 3px; 
+    padding: 10px; 
+    width: 50px; 
+    border: 3px solid; 
+    border-radius: 50%; 
+    height: 50px;
+} 
+
+/* These were inline style tags. Uses id+class to override almost everything */
+#slick-slide00.style-SPWdq {  
+   width: 279px;  
+}  
+
+</style>
+
+
+<div class="team-wrap member-p-3 slick-slide slick-current slick-active snipcss-IKonJ style-SPWdq" data-slick-index="0" aria-hidden="false" tabindex="0" role="tabpanel" id="slick-slide00" aria-describedby="slick-slide-control00">
+    <div class="member text-center">
+      <div class="wrap">
+        <div class="info">
+          <member-h3 class="name">
+            John Doe
+          </member-h3>
+          <member-h4 class="position">
+            Veterinarian
+          </member-h4>
+        </div>
+        <img src="https://www.ingridkuhn.com/themes/petz_bs5.3/img/team1.jpg" alt="" class="rounded-circle img-fluid">
+      </div>
+      <div class="more">
+        <member-p>
+          Etiam maximus mauris vel leo mattis, non venenatis magna finibus vestibulum.
+        </member-p>
+      </div>
+    </div>
+  </div>
+  
+
+{% endblock content %}

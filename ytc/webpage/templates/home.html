@@ -1,7 +1,409 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2 style="padding: 40px"></h2>
+<!-- <h2 style="padding: 80px"></h2>   -->
+
+<style>
+:root {
+  --blue: #14d0f0e6;
+  --pink: rgba(255, 131, 195, 0.4);
+  --white: rgba(255, 255, 255, 0.9);
+}
+
+banner-body {
+  font: 100% system-ui, sans-serif;
+  box-sizing: border-box;
+  overflow: hidden;
+  margin: 0;
+}
+
+.banner-background {
+  background-image: url(/static/resources/purple_paws.avif);
+  background-size: repeat;
+  background-repeat: repeat;
+  background-color: #252746;
+  background-position: center;
+  width: 100vw;
+  height: 350px;
+  z-index: 0;
+  top: 70vh;
+  left: 0;
+  top:0;
+  animation: scroll 100s linear infinite;
+  margin-top: 0px;
+}
+
+.banner-background-texture {
+  background: linear-gradient(
+    to top,
+    rgba(193, 101, 255, 0.4),
+    rgba(255, 255, 255, 0.2)
+  );
+  background-size: cover;
+  width: 100vw;
+  height: 350px;
+  /* position: absolute; */
+  /* z-index: 0; */
+  top: 0;
+  left: 0;
+}
+
+/* CONTENIDO */
+.banner-header {
+  width: 100%;
+  height: 350px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* position: relative; */
+  /* z-index: 1; */
+}
+
+.banner-left-content {
+  width: 40vw;
+  padding-left: 100px;
+  text-align: center; /* Centra el texto horizontalmente */
+}
+
+.banner-right-content {
+  width: 40vw;
+  padding-left: 100px;
+  text-align: center;
+  margin-right: 100px; /* Centra el texto horizontalmente */
+}
 
 
+banner-h1 {
+  margin: 0 0 1rem 0;
+  font-weight: 900;
+  font-size: 4.5rem;
+  text-transform: uppercase;
+  color: #3b365e;
+}
+
+.banner-para {
+  color: #3b365ecb;
+  text-align: center;
+  font-size: large;
+}
+
+
+
+@keyframes scroll {
+  100% {
+    background-position: 0px 300%;
+  }
+}
+
+/* Fallback if the operatring system prefers reduced motion*/
+@media (prefers-reduced-motion) {
+  .wrapper {
+    animation: scroll 800s linear infinite;
+  }
+}
+.text-and-image {
+  margin-right: 20px; /* Ajusta el espacio entre el texto y la imagen */
+}
+.animated-image {
+  max-width: 80%; /* Ajusta el tamaño máximo de la imagen según el contenedor */
+  animation: imageAnimation 2s ease-in-out infinite; /* Agrega una nueva animación para la imagen */
+}
+
+@keyframes imageAnimation {
+  0%, 100% {
+    transform: scale(1);
+  } 50% {
+    transform: scale(1.2); /* Ajusta el valor según la cantidad de agrandamiento */
+  }
+}
+
+.type--A{
+  --line_color : #555555 ;
+  --back_color : #FFECF6  ;
+}
+
+
+.button{
+    position : relative ;
+    z-index : 0 ;
+    width : 240px ;
+    height : 56px ;
+    text-decoration : none ;
+    font-size : 14px ; 
+    font-weight : bold ;
+    color : var(--line_color) ;
+    letter-spacing : 2px ;
+    transition : all .3s ease ;
+}
+.button__text{
+    display : flex ;
+    justify-content : center ;
+    align-items : center ;
+    width : 100% ;
+    height : 100% ;
+}
+.button::before,
+.button::after,
+.button__text::before,
+.button__text::after{
+    content : '' ;
+    position : absolute ;
+    height : 3px ;
+    border-radius : 2px ;
+    background : var(--line_color) ;
+    transition : all .5s ease ;
+}
+.button::before{
+    top : 0 ;
+    left : 54px ;
+    width : calc( 100% - 56px * 2 - 16px ) ;
+}
+.button::after{
+    top : 0 ;
+    right : 54px ;
+    width : 8px ;
+}
+.button__text::before{
+    bottom : 0 ;
+    right : 54px ;
+    width : calc( 100% - 56px * 2 - 16px ) ;
+}
+.button__text::after{
+    bottom : 0 ;
+    left : 54px ;
+    width : 8px ;
+}
+.button__line{
+    position : absolute ;
+    top : 0 ;
+    width : 56px ;
+    height : 100% ;
+    overflow : hidden ;
+}
+.button__line::before{
+    content : '' ;
+    position : absolute ;
+    top : 0 ;
+    width : 150% ;
+    height : 100% ;
+    box-sizing : border-box ;
+    border-radius : 300px ;
+    border : solid 3px var(--line_color) ;
+}
+.button__line:nth-child(1),
+.button__line:nth-child(1)::before{
+    left : 0 ;
+}
+.button__line:nth-child(2),
+.button__line:nth-child(2)::before{
+    right : 0 ;
+}
+.button:hover{
+    letter-spacing : 6px ;
+}
+.button:hover::before,
+.button:hover .button__text::before{
+    width : 8px ;
+}
+.button:hover::after,
+.button:hover .button__text::after{
+    width : calc( 100% - 56px * 2 - 16px ) ;
+}
+.button__drow1,
+.button__drow2{
+    position : absolute ;
+    z-index : -1 ;
+    border-radius : 16px ;
+    transform-origin : 16px 16px ;
+}
+.button__drow1{
+    top : -16px ;
+    left : 40px ;
+    width : 32px ;
+    height : 0;
+    transform : rotate( 30deg ) ;
+}
+.button__drow2{
+    top : 44px ;
+    left : 77px ;
+    width : 32px ;
+    height : 0 ;
+    transform : rotate(-127deg ) ;
+}
+.button__drow1::before,
+.button__drow1::after,
+.button__drow2::before,
+.button__drow2::after{
+    content : '' ;
+    position : absolute ;
+}
+.button__drow1::before{
+    bottom : 0 ;
+    left : 0 ;
+    width : 0 ;
+    height : 32px ;
+    border-radius : 16px ;
+    transform-origin : 16px 16px ;
+    transform : rotate( -60deg ) ;
+}
+.button__drow1::after{
+    top : -10px ;
+    left : 45px ;
+    width : 0 ;
+    height : 32px ;
+    border-radius : 16px ;
+    transform-origin : 16px 16px ;
+    transform : rotate( 69deg ) ;
+}
+.button__drow2::before{
+    bottom : 0 ;
+    left : 0 ;
+    width : 0 ;
+    height : 32px ;
+    border-radius : 16px ;
+    transform-origin : 16px 16px ;
+    transform : rotate( -146deg ) ;
+}
+.button__drow2::after{
+    bottom : 26px ;
+    left : -40px ;
+    width : 0 ;
+    height : 32px ;
+    border-radius : 16px ;
+    transform-origin : 16px 16px ;
+    transform : rotate( -262deg ) ;
+}
+.button__drow1,
+.button__drow1::before,
+.button__drow1::after,
+.button__drow2,
+.button__drow2::before,
+.button__drow2::after{
+    background : var( --back_color ) ;
+}
+.button:hover .button__drow1{
+    animation : drow1 ease-in .06s ;
+    animation-fill-mode : forwards ;
+}
+.button:hover .button__drow1::before{
+    animation : drow2 linear .08s .06s ;
+    animation-fill-mode : forwards ;
+}
+.button:hover .button__drow1::after{
+    animation : drow3 linear .03s .14s ;
+    animation-fill-mode : forwards ;
+}
+.button:hover .button__drow2{
+    animation : drow4 linear .06s .2s ;
+    animation-fill-mode : forwards ;
+}
+.button:hover .button__drow2::before{
+    animation : drow3 linear .03s .26s ;
+    animation-fill-mode : forwards ;
+}
+.button:hover .button__drow2::after{
+    animation : drow5 linear .06s .32s ;
+    animation-fill-mode : forwards ;
+}
+@keyframes drow1{
+    0%   { height : 0 ; }
+    100% { height : 100px ; }
+}
+@keyframes drow2{
+    0%   { width : 0 ; opacity : 0 ;}
+    10%  { opacity : 0 ;}
+    11%  { opacity : 1 ;}
+    100% { width : 120px ; }
+}
+@keyframes drow3{
+    0%   { width : 0 ; }
+    100% { width : 80px ; }
+}
+@keyframes drow4{
+    0%   { height : 0 ; }
+    100% { height : 120px ; }
+}
+@keyframes drow5{
+    0%   { width : 0 ; }
+    100% { width : 124px ; }
+}
+
+.button-container{
+    width : 100% ;
+    height : 300px ;
+    display : flex ;
+    flex-direction : column ;
+    justify-content : center ;
+    align-items : center ;
+}
+.button:not(:last-child){
+  margin-bottom : 64px ;
+}
+.post-img :hover img{
+  transform: scale(1.2);
+
+}
+
+</style>
+
+<div class="banner-background">
+  <div class="banner-background-texture">
+  <div class="banner-header">
+    <div class="banner-left-content">
+      <banner-h1>Necesitamos tu ayuda !</banner-h1>
+    </div>
+    <div class="banner-right-content">
+      <p class="banner-para">
+        That's what we need right now. Lorem ipsum dolor sit amet consectetur,
+        adipisicing elit. Aliquam, corporis.
+      </p>
+      <div class="animate__animated animate__pulse animate__infinite">
+        <div class="button-container">
+            <a href="{% url 'donate' %}" class="button type--A">
+              <div class="button__line"></div>
+              <div class="button__line"></div>
+              <span class="button__text" style="color: black;">MAS INFORMACIÓN AQUÍ</span>
+              <div class="button__drow1"></div>
+              <div class="button__drow2"></div>
+            </a>
+            </div>
+    </div>
+      <!--<a href="{% url 'donate' %}"><img src="/static/resources/boton.png" class="animated-image"></a>-->
+    </div>
+  </div>
+  </div>
+</div>
+
+<!-- <div class="banner-background">
+  <div class="banner-background-texture">
+  <div class="banner-header">
+    <div class="banner-left-content">
+      <banner-h1>Necesitamos tu ayuda !</banner-h1>
+    </div>
+    <div class="banner-right-content">
+      <p class="banner-para">
+        That's what we need right now. Lorem ipsum dolor sit amet consectetur,
+        adipisicing elit. Aliquam, corporis.
+      </p>
+      <a href="{% url 'donate' %}"><img src="/static/resources/boton.png" class="animated-image"></a>
+    </div>
+  </div>
+  </div>
+</div> -->
+<br/>
+
+<div class="container-fluid sm" style="margin-bottom: 20px;">
+{% for post in posts %}
+<table>
+  <td>
+    <a href="https://www.instagram.com/p/{{post.shortcode}}"><img src="{{ post.img_url }}" alt="post_img" class="post-img" style="margin-left: 50px;border-radius: 10%;height: 500px;width: auto;"></a>
+  </td>
+  <td>
+    <h5 style="color: black;align-items: center;margin-left: 100px;justify-content: center;font-size: larger;">{{ post.caption }}</h5>
+  </td>
+    <h1 style="padding: 40px"></h1>
+</table>
+    
+{% endfor %}
+</div>
 {% endblock content %}

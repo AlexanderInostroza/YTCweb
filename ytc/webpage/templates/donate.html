@@ -3,19 +3,7 @@
 {% block content %}
 
 <style>
-  /* body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-  } */
-  /* Estilos CSS para el encabezado (h1) */
-  h1 {
-      color: black;
-      margin-left: 30px;
-      margin-top: 30px;
-  }
+  
 
   table {
       text-align: center;
@@ -31,12 +19,18 @@
 </style>
 <link rel="stylesheet" type="text/css" href="/static/estilo.css">
 
-<h1 >Donaciones</h1>
+<div class="section-title">
+  <h1>DONACIONES Y CONTACTO</h1>
+</div>
 
 <table >
   <tr>
-      <td style="color: black;">Texto en la primera columna</td>
-      <td><img  src="/static/resources/logo.png" alt="Descripción de la imagen" class="image"></td>
+    <td style="color: #5d318a;font-family:'ChewyPro';font-size: 1.7em;letter-spacing: 2px;">
+      {% for text_ln in info %}
+        {{ text_ln }} <br/>
+      {% endfor %}
+    </td>
+    <td><img  src="/static/resources/logo.png" alt="Descripción de la imagen" class="image"></td>
   </tr>
 </table>
 
