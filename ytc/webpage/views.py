@@ -18,7 +18,7 @@ def instagram_scraper():
     post_list = []
     c=0
     for post in profile.get_posts():
-        if c >= 5: break
+        if c >= 6: break
         c+=1
         img_url = post.url
         caption = post.caption
@@ -29,7 +29,6 @@ def instagram_scraper():
         file.write("::{}||{}||{}\n".format(img_url, caption, shortcode))
     file.close()
     
-
 def home(request):
     global LAST_CHECKED_TIME
     if LAST_CHECKED_TIME == None:
