@@ -59,10 +59,21 @@ def pets(request):
     for file in files:
         name, extension = file.split(".")
         if extension != "txt":
+            info_file = open(dir+"/"+name+".txt", "r", encoding="utf-8")
+            text = "".join([line.strip() for line in info_file])
+            info_file.close()
+            info = text.split("*")[1:]
+            for i in range(len(info)):
+                info[i] = {
+                    "index": str(i+1),
+                    "info_index": info[i].strip(),
+                    }
             pets.append({
                 "name": name,
                 "img": file,
+                "info": info,
             })
+            pass
     context = {"pets": pets}
     return render(request, "pets.html", context)
 

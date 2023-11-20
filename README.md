@@ -28,3 +28,6 @@ filebrowser -r ytc/webpage/static/content
 
 filebrowser
 http://127.0.0.1:8080/
+
+Conectar ssh
+nombre.apellido@ssh.inf.santiago.usm.cl
