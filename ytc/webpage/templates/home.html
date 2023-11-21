@@ -10,7 +10,7 @@
   --white: rgba(255, 255, 255, 0.9);
 }
 
-banner-body {
+.banner-body {
   font: 100% system-ui, sans-serif;
   box-sizing: border-box;
   overflow: hidden;
@@ -73,7 +73,7 @@ banner-body {
 }
 
 
-banner-h1 {
+.banner h1 {
   margin: 0 0 1rem 0;
   font-weight: 900;
   font-size: 4.5rem;
@@ -342,32 +342,7 @@ banner-h1 {
 .post-img :hover img{
   transform: scale(1.2);
 }
-<!-- cards-->
-.post-card {
-    width: 48%;
-    margin-bottom: 20px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-  }
 
-  .post-img {
-    border-radius: 10%;
-    height: 300px;
-    width: auto;
-    margin-right: 0px;
-    margin-bottom: 20px;
-    max-width: 100%;
-  }
-
-  @media (max-width: 768px) {
-    .post-card {
-      width: 100%;
-      flex-direction: column;
-    }
-  }
 
 </style>
 
@@ -400,18 +375,65 @@ banner-h1 {
 </div>
 <br/>
 
-<div class="container-fluid sm" style="margin-bottom: 20px; display: flex; flex-wrap: wrap; justify-content: space-between;">
-  {% for post in posts %}
-    <div class="post-card">
-      <a href="https://www.instagram.com/p/{{post.shortcode}}">
-        <img src="{{ post.img_url }}" alt="post_img" class="post-img">
-      </a>
-      <div style="flex: 1; padding-left: 20px;">
-        <h5 style="font-family: ChewyPro;color: black; font-size: larger;">{{ post.caption }}</h5>
+<style>
+  .post-card-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+
+  .post-card {
+    width: 48%;
+    background-color: rgba(188, 129, 246, 0.8);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center; /* Centra verticalmente los elementos en la tarjeta */
+  }
+
+  .post-img {
+    border-radius: 10%;
+    height: 300px;
+    width: auto;
+    max-width: 100%;
+    margin-right: 20px; /* Añade un margen derecho a la imagen */
+  }
+
+  .post-text {
+    flex: 1;
+  }
+
+  @media (max-width: 768px) {
+    .post-card {
+      width: 100%;
+      flex-direction: column; /* Cambia a dirección de columna en pantallas pequeñas */
+    }
+
+    .post-img {
+      margin-right: 0; /* Elimina el margen derecho en una sola columna */
+      margin-bottom: 20px; /* Añade un margen inferior en una sola columna */
+    }
+  }
+</style>
+<div class="section-title">
+  <h1>Nuestros Post</h1>
+</div>
+<div class="container-fluid sm">
+  <div class="post-card-container">
+    {% for post in posts %}
+      <div class="post-card">
+        <a href="https://www.instagram.com/p/{{post.shortcode}}">
+          <img src="{{ post.img_url }}" alt="post_img" class="post-img">
+        </a>
+        <div class="post-text">
+          <h5 style="font-family: ChewyPro; color: black; font-size: larger; text-align: center;">{{ post.caption }}</h5>
+        </div>
       </div>
-    </div>
-  {% endfor %}
+    {% endfor %}
+  </div>
 </div>
 
-<!-- ASDASD COMENTARIO -->
+
 {% endblock content %}
