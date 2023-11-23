@@ -73,7 +73,6 @@ def pets(request):
                 "img": file,
                 "info": info,
             })
-            pass
     context = {"pets": pets}
     return render(request, "pets.html", context)
 
@@ -86,4 +85,19 @@ def donate(request):
     return render(request, "donate.html", context)
 
 def aboutUs(request):
-    return render(request, "aboutUs.html")
+    dir = "ytc/webpage/static/content/administracion"
+    files = os.listdir(dir)
+    members = []
+    for file in files:
+        name, extension = file.split(".")
+        if extension != "txt":
+            info_file = open(dir+"/"+name+".txt", "r", encoding="utf-8")
+            file_as_list = list(info_file)
+            info_file.close()
+            members.append({
+                "name": file_as_list[0],
+                "position": file_as_list[2],
+                "img": file,
+            })
+    context = {"members": members}
+    return render(request, "aboutUs.html", context)

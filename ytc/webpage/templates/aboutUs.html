@@ -117,7 +117,7 @@
     opacity: 0;
 } 
 
-member-p { 
+.member p { 
     margin-top: 0; 
     margin-bottom: 1rem;
     font-size: 17px; 
@@ -137,7 +137,7 @@ member-p {
     margin-bottom: 10px;
 } 
 
-member-h3 { 
+.member h3 { 
     margin-top: 0; 
     margin-bottom: .5rem; 
     font-weight: 500; 
@@ -145,17 +145,17 @@ member-h3 {
     color: var(--bs-heading-color,inherit);
 } 
 
-member-h3 { 
+.member h3 { 
     font-size: calc(1.3rem + .6vw);
 } 
 
 @media (min-width: 1200px){ 
-  member-h3 { 
+  .member h3 { 
     font-size: 1.75rem;
   } 
 }     
 
-member-h3 { 
+.member h3 { 
     font-family: 'Baloo Thambi', sans-serif; 
     font-size: 2.8em; 
     color: #282828; 
@@ -171,7 +171,7 @@ member-h3 {
     font-size: 1.7em;
 } 
 
-member-h4 { 
+.member h4 { 
     margin-top: 0; 
     margin-bottom: .5rem; 
     font-weight: 500; 
@@ -179,7 +179,7 @@ member-h4 {
     color: var(--bs-heading-color,inherit);
 } 
 
-member-h4 { 
+.member h4 { 
     font-size: calc(1.275rem + .3vw);
 } 
 
@@ -189,7 +189,7 @@ member-h4 {
   } 
 }     
 
-member-h4 { 
+.member h4 { 
     font-family: 'Baloo Thambi', sans-serif; 
     font-size: 2.3em; 
     margin-top: 20px; 
@@ -239,26 +239,51 @@ member-h4 {
 
 </style>
 
-
+{% for member in members%}
 <div class="team-wrap member-p-3 slick-slide slick-current slick-active snipcss-IKonJ style-SPWdq" data-slick-index="0" aria-hidden="false" tabindex="0" role="tabpanel" id="slick-slide00" aria-describedby="slick-slide-control00">
     <div class="member text-center">
       <div class="wrap">
         <div class="info">
-          <member-h3 class="name">
+          <h3 class="name">
+            {{member.name}}
+          <h3>
+          <h4 class="position">
+            {{member.position}}
+          <h4>
+        </div>
+        <img src="/static/content/administracion/{{member.img}}" alt="" class="rounded-circle img-fluid">
+      </div>
+      <div class="more">
+        <p>
+          Etiam maximus mauris vel leo mattis, non venenatis magna finibus vestibulum.
+        </p>
+      </div>
+    </div>
+  </div>
+<h1>{{member.name}}</h1>
+<h1>{{member.position}}</h1>
+<h1>{{member.img}}</h1>
+{% endfor %}
+ 
+<!-- <div class="team-wrap member-p-3 slick-slide slick-current slick-active snipcss-IKonJ style-SPWdq" data-slick-index="0" aria-hidden="false" tabindex="0" role="tabpanel" id="slick-slide00" aria-describedby="slick-slide-control00">
+    <div class="member text-center">
+      <div class="wrap">
+        <div class="info">
+          <h3 class="name">
             John Doe
-          </member-h3>
-          <member-h4 class="position">
+          <h3>
+          <h4 class="position">
             Veterinarian
-          </member-h4>
+          <h4>
         </div>
         <img src="https://www.ingridkuhn.com/themes/petz_bs5.3/img/team1.jpg" alt="" class="rounded-circle img-fluid">
       </div>
       <div class="more">
-        <member-p>
+        <p>
           Etiam maximus mauris vel leo mattis, non venenatis magna finibus vestibulum.
-        </member-p>
+        </p>
       </div>
     </div>
-  </div>
+  </div> -->
 
 {% endblock content %}
