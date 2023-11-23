@@ -10,7 +10,7 @@
   --white: rgba(255, 255, 255, 0.9);
 }
 
-.banner-body {
+.banner {
   font: 100% system-ui, sans-serif;
   box-sizing: border-box;
   overflow: hidden;
@@ -42,7 +42,7 @@
   background-size: cover;
   width: 100vw;
   height: 350px;
-  /* position: absolute; */
+  /* position: absolute;
   /* z-index: 0; */
   top: 0;
   left: 0;
@@ -81,10 +81,13 @@
   color: #3b365e;
 }
 
-.banner-para {
+.banner-para{
+  font-family: ChewyPro;
   color: #3b365ecb;
   text-align: center;
   font-size: large;
+  top: 100%;
+  position: relative;
 }
 
 
@@ -119,7 +122,7 @@
 
 .type--A{
   --line_color : #555555 ;
-  --back_color : #FFECF6  ;
+  --back_color : #d498ff  ;
 }
 
 
@@ -226,7 +229,7 @@
 .button__drow2{
     top : 44px ;
     left : 77px ;
-    width : 32px ;
+    width : 35px ;
     height : 0 ;
     transform : rotate(-127deg ) ;
 }
@@ -346,28 +349,33 @@
 
 </style>
 
+<div class="container">
+  <img src="https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-980x653.jpg">
+</div>
+<div class="banner">
 <div class="banner-background">
   <div class="banner-background-texture">
   <div class="banner-header">
     <div class="banner-left-content">
-      <banner-h1>Necesitamos tu ayuda !</banner-h1>
+      <h1>Necesitamos tu ayuda !</h1>
     </div>
     <div class="banner-right-content">
-      <p class="banner-para">
+      <div class="banner-para">
         That's what we need right now. Lorem ipsum dolor sit amet consectetur,
         adipisicing elit. Aliquam, corporis.
-      </p>
+      </div>
       <div class="animate__animated animate__pulse animate__infinite">
         <div class="button-container">
             <a href="{% url 'donate' %}" class="button type--A">
               <div class="button__line"></div>
               <div class="button__line"></div>
-              <span class="button__text" style="color: black;">MAS INFORMACIÓN AQUÍ</span>
+              <span class="button__text" style="color: black;font-family: ChewyPro; font-weight: lighter;">QUIERO AYUDAR!</span>
               <div class="button__drow1"></div>
               <div class="button__drow2"></div>
             </a>
             </div>
     </div>
+  </div>
       <!--<a href="{% url 'donate' %}"><img src="/static/resources/boton.png" class="animated-image"></a>-->
     </div>
   </div>
