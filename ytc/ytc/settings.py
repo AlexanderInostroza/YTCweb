@@ -29,7 +29,7 @@ ALLOWED_HOSTS = [
     '10.6.41.94',
     'yotecuido.inf.santiago.usm.cl',
     '127.0.0.1',
-    '172.17.224.103', # borrar este
+    '*'
     ]
 
 

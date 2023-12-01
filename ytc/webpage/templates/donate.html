@@ -3,18 +3,22 @@
 {% block content %}
 
 <style>
-  
-
   table {
-      text-align: center;
-      margin-bottom: 20px;
+    text-align: center;
+    margin-bottom: 20px;
   }
 
   .image {
-      height: 300px;
-      width: fit-content;
-      margin-bottom: 20px;
-      text-align: justify;
+    height: 300px;
+    width: fit-content;
+    margin-bottom: 20px;
+    text-align: justify;
+  }
+
+  /* Center the section title */
+  .section-title {
+    text-align: center;
+    padding-bottom: 200px;
   }
 </style>
 <link rel="stylesheet" type="text/css" href="/static/estilo.css">
@@ -23,16 +27,15 @@
   <h1>DONACIONES Y CONTACTO</h1>
 </div>
 
-<table >
+<table>
   <tr>
     <td style="color: #5d318a;font-family:'ChewyPro';font-size: 1.7em;letter-spacing: 2px;">
       {% for text_ln in info %}
         {{ text_ln }} <br/>
       {% endfor %}
     </td>
-    <td><img  src="/static/resources/logo.png" alt="Descripción de la imagen" class="image"></td>
+    <td><img src="/static/resources/logo.png" alt="Descripción de la imagen" class="image"></td>
   </tr>
 </table>
-
 
 {% endblock content %}
