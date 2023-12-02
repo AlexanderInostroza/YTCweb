@@ -53,7 +53,7 @@ body {
 }
 
 .header .nav-link-ytc li {
-    padding: 0px 20px;
+    padding: 0px 0px;
 }
 
 .header .nav-link-ytc li:hover {
@@ -64,13 +64,14 @@ body {
     font-size: 16px;
     color: white;
     text-decoration: none;
+    
 }
 
 .header li::before{
     content: '';
     position: absolute;
     transform: translate(-50%,-50%);
-    left: 50%;
+    left: 30%;
     top: 100%;
     width: 0;
     height: 2px;
@@ -78,7 +79,7 @@ body {
     transition-duration: .5s;
 }
 .header li:hover::before{
-    width: 70px;
+    width: 10%;
 }
 
 .header .nav-link-ytc li a:hover {
@@ -228,7 +229,7 @@ body {
         text-align: center;
         color: #bc81f6;
         padding: 0.5em;
-        font-size: 4em;
+        font-size: 2.5em;
         letter-spacing: 5px;
         display: inline;
         max-width: 100%;
@@ -237,5 +238,9 @@ body {
         -webkit-text-stroke-color: #5d318a;
         margin: 0;
     }
-
+    .header .nav-link-ytc a {
+        font-size: 10px;
+        color: white;
+        text-decoration: none;
+    }
 }
