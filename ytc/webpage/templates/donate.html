@@ -3,39 +3,92 @@
 {% block content %}
 
 <style>
-  table {
-    text-align: center;
-    margin-bottom: 20px;
+  /* Your existing styles... */
+
+  body {
+    margin: 0;
+    padding: 0;
   }
 
-  .image {
-    height: 300px;
-    width: fit-content;
-    margin-bottom: 20px;
-    text-align: justify;
+  .card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 100%; /* Cambiado a 100% para ocupar todo el ancho en computadoras */
+    margin: 0 auto; /* Centrar el contenedor en la pantalla */
   }
 
-  /* Center the section title */
+  .info-card,
+  .image-card {
+    /* border: 1px solid #5d318a; */
+    border-radius: 8px;
+    padding: 16px;
+    max-width: 100%; /* Cambiado a 100% para ocupar todo el ancho en computadoras */
+    box-sizing: border-box;
+    text-align: left;
+  }
+
+  .info-card h3,
+  .image-card h3 {
+    margin-bottom: 8px;
+    color: black;
+  }
+
+  .info-card p {
+    color: #333;
+  }
+
+  .image-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+  }
+
   .section-title {
     text-align: center;
-    padding-bottom: 200px;
+    padding-bottom: 20px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .section-title {
+      padding-bottom: 10px;
+    }
+
+    .card-container {
+      justify-content: center;
+    }
+
+    .info-card,
+    .image-card {
+      max-width: 100%;
+    }
   }
 </style>
+
 <link rel="stylesheet" type="text/css" href="/static/estilo.css">
 
 <div class="section-title">
   <h1>DONACIONES Y CONTACTO</h1>
 </div>
 
-<table>
-  <tr>
-    <td style="color: #5d318a;font-family:'ChewyPro';font-size: 1.7em;letter-spacing: 2px;">
-      {% for text_ln in info %}
-        {{ text_ln }} <br/>
-      {% endfor %}
-    </td>
-    <td><img src="/static/resources/logo.png" alt="Descripción de la imagen" class="image"></td>
-  </tr>
-</table>
+<div class="card-container">
+  <div class="info-card">
+    {% for text_ln in info %}
+      <h3 style="color: #5d318a;font-family: ChewyPro ;font-size: 1.7em;letter-spacing: 2px;">
+        {{ text_ln }}</h3>
+    {% endfor %}
+  </div>
+
+  <div class="image-card">
+    <img src="/static/resources/logo.png" alt="Descripción de la imagen">
+  </div>
+</div>
 
 {% endblock content %}

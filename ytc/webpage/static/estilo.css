@@ -216,8 +216,26 @@ body {
         flex-direction: column;
         padding-left:5%
     }
-
     .pet-card-container{
-        scale: 0.5;
+        scale: 1;
     }
+    .section-title {
+        text-align: center;
+        padding: 20px;
+    }
+    .section-title h1 {
+        font-family: ChewyPro;
+        text-align: center;
+        color: #bc81f6;
+        padding: 0.5em;
+        font-size: 4em;
+        letter-spacing: 5px;
+        display: inline;
+        max-width: 100%;
+        font-weight: bolder;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #5d318a;
+        margin: 0;
+    }
+
 }

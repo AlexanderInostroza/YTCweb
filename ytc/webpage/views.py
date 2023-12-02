@@ -23,6 +23,10 @@ def instagram_scraper():
         img_url = post.url
         caption = post.caption
         shortcode = post.shortcode
+        isVideo = post.is_video
+        if isVideo:
+            img_url = "/static/resources/kapuholder.png"
+            # img placeholder
         post_list.append((img_url, caption, shortcode))
     file = open("ytc/webpage/static/resources/posts.txt","w",encoding="utf-8")
     for img_url, caption, shortcode in post_list:

@@ -413,7 +413,6 @@
   left:30%;
 }
 
-  
 .banner {
   font: 100% system-ui, sans-serif;
   box-sizing: border-box;
@@ -580,8 +579,11 @@
     {% for post in posts %}
     <!-- <a href="https://www.instagram.com/p/{{post.shortcode}}"> -->
     <a class="post-card" href="https://www.instagram.com/p/{{post.shortcode}}">
-      
+        {% if post.isVideo%}
+        <img src="https://cdn.discordapp.com/attachments/1167267945592914043/1171567092718387360/IMG-20231003-WA0014.jpg?ex=6578d561&is=65666061&hm=8c61afbc6fd4da0ba822f2319f94e3eb453f3cbf0147c4ad03b8f9cdb0de7791&" alt="post_img" class="post-img">
+        {% else %}
         <img src="{{ post.img_url }}" alt="post_img" class="post-img">
+        {% endif %}
       <div class="post-text">
         <h5 style="font-family: ChewyPro; color: black; font-size: larger; text-align: center;">{{ post.caption }}</h5>
       </div>

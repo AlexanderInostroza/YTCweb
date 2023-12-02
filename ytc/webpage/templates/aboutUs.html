@@ -21,9 +21,9 @@
 } 
 
 .slick-slide { 
-    display: none; 
-    float: left; 
-    height: 100%; 
+    display: none;
+    float: left;
+    height: 100%;
     min-height: 1px;
 } 
 
@@ -53,6 +53,7 @@
     position: relative; 
     overflow: hidden; 
     border-bottom: 10px solid;
+    height: 400px;
 } 
 
 .member  { 
@@ -95,10 +96,13 @@
     top: 0;
 } 
 
-
 .img-fluid { 
     max-width: 100%; 
     height: auto;
+    aspect-ratio: 1 / 1;
+    position: absolute;
+    left:0;
+    bottom: 20px;
 } 
 
 .rounded-circle { 
@@ -107,10 +111,11 @@
 } 
 
 
-.member .wrap img  { 
+.member  img  { 
     width: 100%; 
     transition: all .3s ease; 
     padding: 20px;
+    object-fit: cover;
 } 
 
 .team-wrap .member:hover img { 
@@ -123,18 +128,6 @@
     font-size: 17px; 
     line-height: 34px; 
     color: #757373;
-} 
-
-.social-media { 
-    width: 100%; 
-    text-align: center; 
-    margin-top: 20px; 
-    margin-bottom: 20px;
-} 
-
-.smaller.social-media { 
-    margin-top: 10px; 
-    margin-bottom: 10px;
 } 
 
 .member h3 { 
@@ -202,45 +195,22 @@
     font-size: 18px;
 } 
 
-.fab { 
-    -moz-osx-font-smoothing: grayscale; 
-    -webkit-font-smoothing: antialiased; 
-    display: inline-block; 
-    font-style: normal; 
-    font-variant: normal; 
-    text-rendering: auto; 
-    line-height: 1;
-} 
-
-.fab { 
-    font-family: 'Font Awesome 5 Brands';
-} 
-
-.social-media i  { 
-    transition: all .3s ease-in-out;
-} 
-
-.social-media a i  { 
-    font-weight: normal; 
-    color: #fff; 
-    transition: all .3s ease-in-out; 
-    margin: 3px; 
-    padding: 10px; 
-    width: 50px; 
-    border: 3px solid; 
-    border-radius: 50%; 
-    height: 50px;
-} 
-
 /* These were inline style tags. Uses id+class to override almost everything */
 #slick-slide00.style-SPWdq {  
    width: 279px;  
-}  
+} 
 
 </style>
 
+<div class="section-title">
+  <h1>Quienes somos</h1>
+</div>
+
+<div class="container text-center">
+  <div class="row">
 {% for member in members%}
-<div class="team-wrap member-p-3 slick-slide slick-current slick-active snipcss-IKonJ style-SPWdq" data-slick-index="0" aria-hidden="false" tabindex="0" role="tabpanel" id="slick-slide00" aria-describedby="slick-slide-control00">
+<div class="col d-flex justify-content-center">
+<div class="team-wrap member-p-3 slick-slide slick-current style-SPWdq" data-slick-index="0" aria-hidden="false" tabindex="0" role="tabpanel" id="slick-slide00" aria-describedby="slick-slide-control00">
     <div class="member text-center">
       <div class="wrap">
         <div class="info">
@@ -251,8 +221,8 @@
             {{member.position}}
           <h4>
         </div>
-        <img src="/static/content/administracion/{{member.img}}" alt="" class="rounded-circle img-fluid">
       </div>
+      <img src="/static/content/administracion/{{member.img}}" alt="" class="rounded-circle img-fluid">
       <div class="more">
         <p>
           Etiam maximus mauris vel leo mattis, non venenatis magna finibus vestibulum.
@@ -260,10 +230,10 @@
       </div>
     </div>
   </div>
-<h1>{{member.name}}</h1>
-<h1>{{member.position}}</h1>
-<h1>{{member.img}}</h1>
-{% endfor %}
+</div>
+  {% endfor %}
+</div>
+</div>
  
 <!-- <div class="team-wrap member-p-3 slick-slide slick-current slick-active snipcss-IKonJ style-SPWdq" data-slick-index="0" aria-hidden="false" tabindex="0" role="tabpanel" id="slick-slide00" aria-describedby="slick-slide-control00">
     <div class="member text-center">
