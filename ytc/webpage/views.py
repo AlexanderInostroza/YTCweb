@@ -43,8 +43,11 @@ def home(request):
         instagram_scraper()
     posts = []
     file = open("ytc/webpage/static/resources/posts.txt","r",encoding="utf-8")
+    header = open("ytc/webpage/static/content/header.txt", "r", encoding="utf-8")
     r_posts = "\n".join([ln.strip() for ln in file]).split("::")[1:]
+    r_header = "\n".join(list(header))
     file.close()
+    header.close()
     for r_post in r_posts:
         img_url, caption, shortcode = r_post.split("||")
         posts.append({
@@ -52,7 +55,7 @@ def home(request):
             "caption": caption,
             "shortcode": shortcode
         })
-    context = {"posts": posts}
+    context = {"posts": posts, "header": r_header}
     return render(request, "home.html", context)
 
 def pets(request):
