@@ -177,7 +177,9 @@ body {
     left: 1%;
     position: relative;
     z-index: 1;
+    width: 340px;
 }
+
 
   .ribbon-container h3 {
     font-family: ChewyPro;
@@ -211,19 +213,76 @@ body {
     margin-left: auto;
 }
 
+.sinusoidal-border clipPath{
+    scale:4;
+    display:block;
+}
+.info-container svg{
+    height: 2.5em;
+}
+
 @media (max-width: 1100px) {
     .row-cols-2{
         display: flex;
         flex-direction: column;
-        padding-left:5%
     }
     .pet-card-container{
         scale: 1;
+        width: 50vh;
+        padding-top: 30px;
+        padding-bottom: 30px;
     }
     .section-title {
         text-align: center;
         padding: 20px;
     }
+
+    .sinusoidal-border {
+        width: 200px; /* Adjust the width and height as needed */
+        height: 200px;
+        overflow: hidden;
+        z-index: -1;
+    }
+    .sinusoidal-border img {
+        width: 85%;
+        height: 85%;
+    }
+    .sinusoidal-border clipPath{
+        scale:2;
+    }
+    .ribbon-container {
+        position: absolute;
+        left: 6.4%;
+        top: 64%;
+    }
+    .ribbon-container h3 {
+        position: absolute;
+        top: 6%;
+        width: 100%;
+        left: 17%;
+        text-align: center;
+        font-size: 36px;
+    }
+    .pet-ribbon {
+        fill: #f1b228; /* Color de relleno */
+        top: 0;
+        left: 1%;
+        position: relative;
+        width: 170px;
+    }
+    .info-container svg{
+        height: 1.5em;
+    }
+    .info-line h6{
+        font-family: ChewyPro;
+        color: #000000;
+        font-size: 22px;
+        position: relative;
+        font-weight: lighter;
+        top:2%;
+        padding-top: 20px;
+    }
+    
     .section-title h1 {
         font-family: ChewyPro;
         text-align: center;
